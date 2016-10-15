@@ -17,15 +17,17 @@
     <ion-slides options="swiperOptions" slider="swiper" ion-wizard>
         <ion-slide-page ion-wizard-step next-condition="step1">
             <ion-content class="has-header">
-                <div class="row">
-                    <div class="col col-center">
-                        <img class="logo intro" ng-src="{{step1.image.url}}" alt="{{step1.image.title}}">
+                <div class="vertical-align">
+                    <div class="row">
+                        <div class="col col-center text-center">
+                            <img class="logo intro" ng-src="{{step1.image.url}}" alt="{{step1.image.title}}">
+                        </div>
                     </div>
-                </div>
 
-                <div class="row">
-                    <div class="col col-center">
-                        <p>{{step1.text}}</p>
+                    <div class="row">
+                        <div class="col col-60 col-offset-20 text-center">
+                            <p>{{step1.text}}</p>
+                        </div>
                     </div>
                 </div>
             </ion-content>
@@ -33,39 +35,43 @@
 
         <ion-slide-page ion-wizard-step>
             <ion-content class="has-header">
-                <div class="row">
-                    <div class="col col-center">
-                        <img class="logo intro" ng-src="{{step2.image.url}}" alt="{{step2.image.title}}">
+                <div class="vertical-align">
+                    <div class="row">
+                        <div class="col col-center">
+                            <img class="logo intro" ng-src="{{step2.image.url}}" alt="{{step2.image.title}}">
+                        </div>
                     </div>
-                </div>
 
-                <div class="row">
-                    <div class="col col-center">
-                        <p>{{step2.text}}</p>
+                    <div class="row">
+                        <div class="col col-center">
+                            <p>{{step2.text}}</p>
+                        </div>
                     </div>
                 </div>
             </ion-content>
         </ion-slide-page>
 
         <ion-slide-page ion-wizard-step class="has-header">
-            <div class="row">
-                <div class="col col-center">
-                    <img class="logo intro" ng-src="{{step3.image.url}}" alt="{{step3.image.title}}">
+            <div class="vertical-align">
+                <div class="row">
+                    <div class="col col-center">
+                        <img class="logo intro" ng-src="{{step3.image.url}}" alt="{{step3.image.title}}">
+                    </div>
                 </div>
-            </div>
 
-            <div class="row">
-                <div class="col col-center">
-                    <p>{{step3.text}}</p>
+                <div class="row">
+                    <div class="col col-center">
+                        <p>{{step3.text}}</p>
+                    </div>
                 </div>
-            </div>
 
-            <div class="row">
-                <div class="col col-center">
-                    <p>
-                        {{step3.terms.text}}
-                    </p>
-                    <input type="checkbox" placeholder="{{step3.terms.acceptText}}" ng-model="step3.terms.accept" autocomplete="off">
+                <div class="row">
+                    <div class="col col-center">
+                        <p>
+                            {{step3.terms.text}}
+                        </p>
+                        <input type="checkbox" placeholder="{{step3.terms.acceptText}}" ng-model="step3.terms.accept" autocomplete="off">
+                    </div>
                 </div>
             </div>
         </ion-slide-page>
