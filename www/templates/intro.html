@@ -1,0 +1,74 @@
+<ion-view>
+    <ion-nav-buttons side="left">
+        <button class="button blank-button" ion-wizard-previous>
+            {{wizard.goBack}}
+        </button>
+    </ion-nav-buttons>
+
+    <ion-nav-buttons side="right">
+        <button class="button blank-button" ion-wizard-next>
+            {{wizard.goForward}}
+        </button>
+        <button class="button blank-button" ion-wizard-start="start()" condition="startCondition()">
+            {{wizard.goApp}}
+        </button>
+    </ion-nav-buttons>
+
+    <ion-slides options="swiperOptions" slider="swiper" ion-wizard>
+        <ion-slide-page ion-wizard-step next-condition="step1">
+            <ion-content class="has-header">
+                <div class="row">
+                    <div class="col col-center">
+                        <img class="logo intro" ng-src="{{step1.image.url}}" alt="{{step1.image.title}}">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col col-center">
+                        <p>{{step1.text}}</p>
+                    </div>
+                </div>
+            </ion-content>
+        </ion-slide-page>
+
+        <ion-slide-page ion-wizard-step>
+            <ion-content class="has-header">
+                <div class="row">
+                    <div class="col col-center">
+                        <img class="logo intro" ng-src="{{step2.image.url}}" alt="{{step2.image.title}}">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col col-center">
+                        <p>{{step2.text}}</p>
+                    </div>
+                </div>
+            </ion-content>
+        </ion-slide-page>
+
+        <ion-slide-page ion-wizard-step class="has-header">
+            <div class="row">
+                <div class="col col-center">
+                    <img class="logo intro" ng-src="{{step3.image.url}}" alt="{{step3.image.title}}">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col col-center">
+                    <p>{{step3.text}}</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col col-center">
+                    <p>
+                        {{step3.terms.text}}
+                    </p>
+                    <input type="checkbox" placeholder="{{step3.terms.acceptText}}" ng-model="step3.terms.accept" autocomplete="off">
+                </div>
+            </div>
+        </ion-slide-page>
+    </ion-slides>
+
+</ion-view>

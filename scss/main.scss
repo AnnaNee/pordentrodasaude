@@ -1,0 +1,42 @@
+// Buttons
+
+.primary-button {
+	background-color: $primary-button-bg-color;
+	color: $primary-button-color;
+	border: none;
+
+	&:hover {
+		background-color: lighter($primary-button-bg-color, 20%);
+		color: $primary-button-color;
+	}
+
+	&.button.activated,
+	.button.active {
+		background-color: lighten($primary-button-bg-color, 5%);
+		color: $primary-button-color;
+	}
+}
+
+.blank-button {
+	background-color: $blank-button-bg-color;
+	color: $blank-button-color;
+	border: none;
+
+	&:hover {
+		background-color: lighter($blank-button-bg-color, 20%);
+		color: $blank-button-color;
+	}
+
+	&.button.activated,
+	.button.active {
+		background-color: lighten($blank-button-bg-color, 5%);
+		color: $blank-button-color;
+	}
+}
+
+//General
+
+.pane {
+	background-color: $light-gray;
+	color: $text-color;
+}
