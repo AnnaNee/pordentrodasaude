@@ -1,6 +1,6 @@
 <ion-view name="login-view">
   <div class="bar bar-header">
-    <button class="button blank-button">{{signUpData.goBack}}</button>
+    <button class="button blank-button" ng-click="goBack()">{{signUpData.goBack}}</button>
     <h2 class="title">{{signUpData.title}}</h2>
     <button class="button blank-button">{{signUpData.send}}</button>
   </div>
@@ -50,7 +50,23 @@
       </div>
     </div>
 
-    <div id="map" data-tap-disabled="true"></div>
+    <div class="row">
+      <div class="col col-center">
+        <label class="item item-input">
+          <input type="text" g-places-autocomplete ng-model="data.adress" placeholder="{{signUpData.adress}}"/>
+        </label>
+      </div>
+    </div>
+
+    <!--<div id="map" data-tap-disabled="true"></div>-->
+
+    <div class="row">
+      <div class="col col-center">
+        <i class="icon ion-information-circled">
+          <small>{{signUpData.information}}</small>
+        </i>
+      </div>
+    </div>
 
     <div class="row">
       <div class="col col-45">

@@ -39,7 +39,7 @@ angular.module('starter.controllers', [])
     }
 
     $scope.start = function() {
-        $state.go('login');
+      $state.go('login');
     };
 
     $scope.startCondition = function() {
@@ -91,10 +91,16 @@ angular.module('starter.controllers', [])
     city: 'Cidade',
     state: 'UF',
     email: 'E-mail',
-    password: 'Senha'
+    password: 'Senha',
+    adress: 'Digite seu endereço',
+    information: 'As informações fornecidas são restritas e não serão divulgadas. Todas as avaliações realizadas no aplicativo são anônimas.'
   }
 
-  var options = { timeout: 10000, enableHighAccuracy: true };
+  $scope.goBack = function() {
+    $state.go('login');
+  }
+
+  /* var options = { timeout: 10000, enableHighAccuracy: true };
  
   $cordovaGeolocation.getCurrentPosition(options).then(function(position){
     var latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
@@ -125,7 +131,7 @@ angular.module('starter.controllers', [])
  
   }, function(error){
     console.log("Não foi possível selecionar localização");
-  });
+  }); */
 }])
 
 .controller('ChatsCtrl', function($scope, Chats) {
