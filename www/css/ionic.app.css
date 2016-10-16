@@ -9849,6 +9849,9 @@ a.button {
     background-color: rgba(13, 13, 13, 0);
     color: #8C9AA0; }
 
+.title {
+  color: #138084; }
+
 .pane {
   background-color: #F9F9F9;
   color: #138084; }
@@ -9856,3 +9859,11 @@ a.button {
 .intro-bar {
   background-color: transparent;
   background-image: none; }
+
+.step-image,
+.swiper-slide img {
+  font-size: 10rem;
+  width: 50%; }
+
+.login .logo {
+  width: 40%; }

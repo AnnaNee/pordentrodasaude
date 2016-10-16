@@ -20,7 +20,7 @@
                 <div class="vertical-align">
                     <div class="row">
                         <div class="col col-center text-center">
-                            <img class="logo intro" ng-src="{{step1.image.url}}" alt="{{step1.image.title}}">
+                            <img class="logo intro step-image" ng-src="{{step1.image.url}}" alt="{{step1.image.title}}">
                         </div>
                     </div>
 
@@ -37,14 +37,32 @@
             <ion-content class="has-header">
                 <div class="vertical-align">
                     <div class="row">
-                        <div class="col col-center">
-                            <img class="logo intro" ng-src="{{step2.image.url}}" alt="{{step2.image.title}}">
+                        <div class="col col-center text-center">
+                            <i class="icon ion-locked step-image"></i>
                         </div>
                     </div>
 
                     <div class="row">
-                        <div class="col col-center">
+                        <div class="col col-60 col-offset-20 text-center">
                             <p>{{step2.text}}</p>
+                        </div>
+                    </div>
+                </div>
+            </ion-content>
+        </ion-slide-page>
+
+        <ion-slide-page ion-wizard-step>
+            <ion-content class="has-header">
+                <div class="vertical-align">
+                    <div class="row">
+                        <div class="col col-center text-center">
+                            <i class="icon ion-play step-image"></i>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col col-60 col-offset-20 text-center">
+                            <p>{{step3.text}}</p>
                         </div>
                     </div>
                 </div>
@@ -54,23 +72,16 @@
         <ion-slide-page ion-wizard-step class="has-header">
             <div class="vertical-align">
                 <div class="row">
-                    <div class="col col-center">
-                        <img class="logo intro" ng-src="{{step3.image.url}}" alt="{{step3.image.title}}">
+                    <div class="col col-center text-center">
+                        <h2 class="title">Termos de Uso</h2>
                     </div>
                 </div>
-
-                <div class="row">
-                    <div class="col col-center">
-                        <p>{{step3.text}}</p>
-                    </div>
-                </div>
-
                 <div class="row">
                     <div class="col col-center">
                         <p>
-                            {{step3.terms.text}}
+                            {{step4.terms.text}}
                         </p>
-                        <input type="checkbox" placeholder="{{step3.terms.acceptText}}" ng-model="step3.terms.accept" autocomplete="off">
+                        <ion-checkbox placeholder="{{step4.terms.acceptText}}" ng-model="step4.terms.accept" autocomplete="off">Li e concordo com os Termos de Uso</ion-checkbox>
                     </div>
                 </div>
             </div>
