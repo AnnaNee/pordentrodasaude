@@ -83,7 +83,15 @@ angular.module('starter.controllers', [])
 
 .controller('SignUpController', ['$scope', '$state', '$timeout', function($scope, $state, $timeout) {
   $scope.signUpData = {
-    title: 'Cadastrar'
+    title: 'Cadastrar',
+    goBack: 'Voltar',
+    send: 'Enviar',
+    fullName: 'Nome e sobrenome',
+    age: 'Idade',
+    city: 'Cidade',
+    state: 'UF',
+    email: 'E-mail',
+    password: 'Senha'
   }   
 }])
 

@@ -1,0 +1,59 @@
+<ion-view name="login-view">
+  <div class="bar bar-header">
+    <button class="button blank-button">{{signUpData.goBack}}</button>
+    <h2 class="title">{{signUpData.title}}</h2>
+    <button class="button blank-button">{{signUpData.send}}</button>
+  </div>
+
+  <ion-content class="login">
+    <div class="row">
+      <div class="col col-80">
+        <label class="item item-input">
+            <input type="text" placeholder="{{signUpData.fullName}}" ng-model="data.fullName">
+        </label>
+      </div>
+
+      <div class="col col-20">
+        <label class="item item-input">
+            <input type="text" placeholder="{{signUpData.age}}" ng-model="data.age">
+        </label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col col-80">
+        <label class="item item-input">
+            <input type="text" placeholder="{{signUpData.city}}" ng-model="data.city">
+        </label>
+      </div>
+
+      <div class="col col-20">
+        <label class="item item-input">
+            <input type="text" placeholder="{{signUpData.state}}" ng-model="data.state">
+        </label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col col-center">
+        <label class="item item-input">
+            <input type="text" placeholder="{{signUpData.email}}" ng-model="data.email">
+        </label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col col-center">
+        <label class="item item-input">
+            <input type="password" placeholder="{{signUpData.password}}" ng-model="data.password">
+        </label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col col-45">
+        <button class="button button-block secondary-button" ng-click="signUp()">{{signUpData.send}}</button>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

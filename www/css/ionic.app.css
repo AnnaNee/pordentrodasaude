@@ -9849,6 +9849,18 @@ a.button {
     background-color: rgba(13, 13, 13, 0);
     color: #8C9AA0; }
 
+.secondary-button {
+  background-color: #27B9B5;
+  color: #FFF;
+  border: none; }
+  .secondary-button:hover {
+    background-color: lighter(#27B9B5, 20%);
+    color: #FFF; }
+  .secondary-button.button.activated,
+  .secondary-button .button.active {
+    background-color: #2bceca;
+    color: #FFF; }
+
 .title {
   color: #138084; }
 
