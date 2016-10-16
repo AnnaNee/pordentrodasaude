@@ -1,0 +1,36 @@
+<ion-view name="login-view">
+  <ion-content class="login">
+    <div class="row">
+      <div class="col col-center text-center">
+        <img class="logo" ng-src="{{loginData.image.url}}" alt="loginData.image.title">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col col-center">
+        <div class="list">
+            <label class="item item-input">
+                <input type="text" placeholder="{{loginData.username}}" ng-model="data.username">
+            </label>
+            <label class="item item-input">
+                <input type="password" placeholder="{{loginData.password}}" ng-model="data.password">
+            </label>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col col-45">
+        <button class="button button-block secondary-button" ng-click="login()">{{loginData.title}}</button>
+      </div>
+
+      <div class="col col-10 text-center">
+        <p>ou</p>
+      </div>
+
+      <div class="col col-45">
+        <button class="button button-block primary-button" ng-click="signUp()">{{loginData.signUp.title}}</button>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

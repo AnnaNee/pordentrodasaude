@@ -47,4 +47,31 @@ angular.module('starter.services', [])
       return null;
     }
   };
+})
+
+.service('LoginService', function($q) {
+    return {
+        loginUser: function(name, pw) {
+            var deferred = $q.defer();
+            var promise = deferred.promise;
+ 
+            if (name == 'admin' && pw == 'admin') {
+                deferred.resolve('Bem vindo, ' + name + '!');
+            } else {
+                deferred.reject('Login ou senha incorretos.');
+            }
+
+            promise.success = function(fn) {
+                promise.then(fn);
+                return promise;
+            }
+
+            promise.error = function(fn) {
+                promise.then(null, fn);
+                return promise;
+            }
+
+            return promise;
+        }
+    }
 });

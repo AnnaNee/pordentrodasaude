@@ -34,7 +34,25 @@
 	}
 }
 
+.secondary-button {
+	background-color: $secondary-button-bg-color;
+	color: $secondary-button-color;
+	border: none;
+
+	&:hover {
+		background-color: lighter($secondary-button-bg-color, 20%);
+		color: $secondary-button-color;
+	}
+
+	&.button.activated,
+	.button.active {
+		background-color: lighten($secondary-button-bg-color, 5%);
+		color: $secondary-button-color;
+	}
+}
+
 // Headlings
+
 .title {
 	color: $title-color;
 	//font-family: $title-font-family;

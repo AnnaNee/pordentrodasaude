@@ -29,65 +29,77 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
   // Each state's controller can be found in controllers.js
   $stateProvider
 
-      .state('main', {
-          url: '/start',
-          abstract: true,
-          template: '<ion-nav-view></ion-nav-view>'
-      })
+    .state('main', {
+        url: '/start',
+        abstract: true,
+        template: '<ion-nav-view></ion-nav-view>'
+    })
 
-      .state('main.intro', {
-          url: '/intro',
-          templateUrl: 'templates/intro.html',
-          controller: 'IntroController'
-      })
+    .state('main.intro', {
+        url: '/intro',
+        templateUrl: 'templates/intro.html',
+        controller: 'IntroController'
+    })
 
-  // setup an abstract state for the tabs directive
+    .state('login', {
+        url: '/login',
+        templateUrl: 'templates/login.html',
+        controller: 'LoginController'
+    })
+
+    .state('sign-up', {
+        url: '/cadastrar',
+        templateUrl: 'templates/sign-up.html',
+        controller: 'SignUpController'
+    })
+
+    // setup an abstract state for the tabs directive
     .state('tab', {
-    url: "/tab",
-    abstract: true,
-    templateUrl: "templates/tabs.html"
-  })
-
-  // Each tab has its own nav history stack:
-
-  .state('tab.dash', {
-    url: '/dash',
-    views: {
-      'tab-dash': {
-        templateUrl: 'templates/tab-dash.html',
-        controller: 'DashCtrl'
-      }
-    }
-  })
-
-  .state('tab.chats', {
-      url: '/chats',
-      views: {
-        'tab-chats': {
-          templateUrl: 'templates/tab-chats.html',
-          controller: 'ChatsCtrl'
-        }
-      }
+      url: "/tab",
+      abstract: true,
+      templateUrl: "templates/tabs.html"
     })
-    .state('tab.chat-detail', {
-      url: '/chats/:chatId',
+
+    // Each tab has its own nav history stack:
+
+    .state('tab.dash', {
+      url: '/dash',
       views: {
-        'tab-chats': {
-          templateUrl: 'templates/chat-detail.html',
-          controller: 'ChatDetailCtrl'
+        'tab-dash': {
+          templateUrl: 'templates/tab-dash.html',
+          controller: 'DashCtrl'
         }
       }
     })
 
-  .state('tab.account', {
-    url: '/account',
-    views: {
-      'tab-account': {
-        templateUrl: 'templates/tab-account.html',
-        controller: 'AccountCtrl'
+    .state('tab.chats', {
+        url: '/chats',
+        views: {
+          'tab-chats': {
+            templateUrl: 'templates/tab-chats.html',
+            controller: 'ChatsCtrl'
+          }
+        }
+      })
+      .state('tab.chat-detail', {
+        url: '/chats/:chatId',
+        views: {
+          'tab-chats': {
+            templateUrl: 'templates/chat-detail.html',
+            controller: 'ChatDetailCtrl'
+          }
+        }
+      })
+
+    .state('tab.account', {
+      url: '/account',
+      views: {
+        'tab-account': {
+          templateUrl: 'templates/tab-account.html',
+          controller: 'AccountCtrl'
+        }
       }
-    }
-  });
+    });
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/start/intro');
