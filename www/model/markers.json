@@ -3,18 +3,72 @@
     "title": "UPA Itaquera",
     "lat": -23.5377505,
     "lng": -46.4823776,
-    "description": "Stockholm is the capital and the largest city of Sweden and constitutes the most populated urban area in Scandinavia with a population of 2.1 million in the metropolitan area (2010)"
+    "photo": "sem_foto.png",
+    "contact": "11 3030-3030",
+    "adress": "Rua Demini, 355, São Paulo (SP)",
+    "reviews": [
+      {
+        "review_1": {
+          "rate": 3,
+          "description": "Ótimo atendimento",
+          "user_id": 1
+        }
+      },
+      {
+        "review_2": {
+          "rate": 3,
+          "description": "Ótimo atendimento",
+          "user_id": 1
+        }
+      }
+    ]
   },
   {
     "title": "UPA 26 de Agosto Itaquera",
     "lat": -23.5442398,
     "lng": -46.4657333,
-    "description": "Oslo is a municipality, and the capital and most populous city of Norway with a metropolitan population of 1,442,318 (as of 2010)."
+    "photo": "sem_foto.png",
+    "contact": "11 3030-3030",
+    "adress": "Rua Demini, 355, São Paulo (SP)",
+    "reviews": [
+      {
+        "review_1": {
+          "rate": 3,
+          "description": "Ótimo atendimento",
+          "user_id": 1
+        }
+      },
+      {
+        "review_2": {
+          "rate": 3,
+          "description": "Ótimo atendimento",
+          "user_id": 1
+        }
+      }
+    ]
   },
   {
     "title": "UPA Jardim Santo André",
     "lat": -23.7008745,
     "lng": -46.4959187,
-    "description": "Copenhagen is the capital of Denmark and its most populous city, with a metropolitan population of 1,931,467 (as of 1 January 2012)."
+    "photo": "sem_foto.png",
+    "contact": "11 3030-3030",
+    "adress": "Rua Demini, 355, São Paulo (SP)",
+    "reviews": [
+      {
+        "review_1": {
+          "rate": 3,
+          "description": "Ótimo atendimento",
+          "user_id": 1
+        }
+      },
+      {
+        "review_2": {
+          "rate": 3,
+          "description": "Ótimo atendimento",
+          "user_id": 1
+        }
+      }
+    ]
   }
 ]

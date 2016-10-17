@@ -59,6 +59,7 @@ angular.module('starter.controllers', [])
 }])
 
 .controller('DashboardController', ['$scope', '$cordovaGeolocation', '$state', 'Markers', function($scope, $cordovaGeolocation, $state, Markers) {
+  // Autocomplete Google Map fix touch-press on Android devices
   $scope.disableTap = function() {
     var container = document.getElementsByClassName('pac-container');
 

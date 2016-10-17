@@ -166,28 +166,36 @@ angular.module('starter.services', [])
   }
  
   function loadMarkers() {
-      Markers.getMarkers().then(function(markers){
-        console.log("Markers: ", markers);
- 
-        var records = markers.data;
- 
-        for (var i = 0; i < records.length; i++) {
-          var record = records[i];
-          var markerPos = new google.maps.LatLng(record.lat, record.lng);
- 
-          var marker = new google.maps.Marker({
-              map: map,
-              animation: google.maps.Animation.DROP,
-              position: markerPos
-          });
+    Markers.getMarkers().then(function(markers){
+      console.log("Markers: ", markers);
 
-          buildSearchBox();
- 
-          var infoWindowContent = "<h4>" + record.title + "</h4>";          
- 
-          addInfoWindow(marker, infoWindowContent, record);
-        }
-      }); 
+      var records = markers.data;
+
+      for (var i = 0; i < records.length; i++) {
+        var record = records[i];
+        var markerPos = new google.maps.LatLng(record.lat, record.lng);
+        var iconBase = "img/marker_icon.png"
+
+        var marker = new google.maps.Marker({
+            map: map,
+            animation: google.maps.Animation.DROP,
+            position: markerPos,
+            icon: iconBase
+        });
+
+        buildSearchBox();
+
+        var infoWindowContent =
+          "<h4 class=\"map-item title\">" + record.title + "</h4>" +
+          "<img class=\"map-item image\" src=" + "img/" + record.photo + ">" +
+          "<small class=\"map-item reviews\">Avaliações: " + record.reviews.length + "</small>" +
+          "<i class=\"map-item phone icon ion-ios-telephone\"> " + record.contact + "</i>" +
+          "<i class=\"map-item adress icon ion-location\"> " + record.adress + "</i>" +
+          "<a class=\"button blank-button\" href=\"#/tab/reviews\">Avaliar" + "</a>";
+
+        addInfoWindow(marker, infoWindowContent, record);
+      }
+    }); 
   }
  
   function addInfoWindow(marker, message, record) {

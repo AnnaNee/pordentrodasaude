@@ -2,3 +2,13 @@
 	top: 4rem !important;
 	left: 1rem !important;
 }
+
+.map-item {
+	display: block;
+
+	&.image {
+		float: left;
+		width: 32%;
+		margin-right: 1rem;
+	}
+}
