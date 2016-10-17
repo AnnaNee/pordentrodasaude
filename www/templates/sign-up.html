@@ -1,11 +1,11 @@
-<ion-view name="login-view">
+<ion-view name="sign-up-view">
   <div class="bar bar-header">
     <button class="button blank-button" ng-click="goBack()">{{signUpData.goBack}}</button>
     <h2 class="title">{{signUpData.title}}</h2>
     <button class="button blank-button">{{signUpData.send}}</button>
   </div>
 
-  <ion-content class="login">
+  <ion-content class="sign-up">
     <div class="row">
       <div class="col col-80">
         <label class="item item-input">
@@ -70,7 +70,7 @@
 
     <div class="row">
       <div class="col col-45">
-        <button class="button button-block secondary-button" ng-click="signUp()">{{signUpData.send}}</button>
+        <button class="button button-block secondary-button" ng-click="goBack()">{{signUpData.send}}</button>
       </div>
     </div>
   </ion-content>

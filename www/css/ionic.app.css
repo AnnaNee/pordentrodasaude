@@ -9868,6 +9868,10 @@ a.button {
   background-color: #F9F9F9;
   color: #138084; }
 
+.login,
+.signup {
+  margin-top: 2.8rem; }
+
 .intro-bar {
   background-color: transparent;
   background-image: none; }

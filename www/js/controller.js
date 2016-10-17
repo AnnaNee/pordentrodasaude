@@ -60,7 +60,9 @@ angular.module('starter.controllers', [])
     password: 'Senha',
     signUp: {
       title: 'Cadastrar'
-    }
+    },
+    goBack: 'Voltar',
+    send: 'Entrar',
   }
 
   $scope.data = {};
@@ -78,6 +80,10 @@ angular.module('starter.controllers', [])
 
   $scope.signUp = function() {
     $state.go('sign-up');
+  }
+
+  $scope.goBack = function() {
+    $state.go('main.intro');
   }
 }])
 

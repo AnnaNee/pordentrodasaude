@@ -64,3 +64,8 @@
 	background-color: $light-gray;
 	color: $text-color;
 }
+
+.login,
+.signup {
+	margin-top: 2.8rem; // Top offset for login and sign-up views
+}

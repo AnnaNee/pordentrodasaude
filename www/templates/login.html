@@ -1,4 +1,10 @@
 <ion-view name="login-view">
+  <div class="bar bar-header bar-sign">
+    <button class="button blank-button" ng-click="goBack()">{{loginData.goBack}}</button>
+    <h2 class="title">{{loginData.title}}</h2>
+    <button class="button blank-button" ng-click="login()">{{loginData.send}}</button>
+  </div>
+
   <ion-content class="login">
     <div class="row">
       <div class="col col-center text-center">
