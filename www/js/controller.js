@@ -1,5 +1,16 @@
 angular.module('starter.controllers', [])
 
+.run(function($ionicPlatform, GoogleMaps) {
+  if(window.cordova && window.cordova.plugins.Keyboard) {
+    cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+  }
+  if(window.StatusBar) {
+    StatusBar.styleDefault();
+  }
+
+  GoogleMaps.init();
+})
+
 .controller('IntroController', ['$scope', '$state', function($scope, $state) {
     $scope.step1 = {
       image: {
@@ -47,7 +58,9 @@ angular.module('starter.controllers', [])
     };
 }])
 
-.controller('DashCtrl', function($scope) {})
+.controller('DashboardController', ['$scope', '$cordovaGeolocation', '$state', 'Markers', function($scope, $cordovaGeolocation, $state, Markers) {
+
+}])
 
 .controller('LoginController', ['$scope', 'LoginService', '$ionicPopup', '$state', function($scope, LoginService, $ionicPopup, $state) {
   $scope.loginData = {
@@ -69,7 +82,7 @@ angular.module('starter.controllers', [])
 
   $scope.login = function() {
     LoginService.loginUser($scope.data.username, $scope.data.password).success(function(data) {
-      $state.go('tab.dash');
+      $state.go('tab.dashboard');
     }).error(function(data) {
       var alertPopup = $ionicPopup.alert({
         title: 'Falha ao fazer login',
@@ -105,42 +118,9 @@ angular.module('starter.controllers', [])
   $scope.goBack = function() {
     $state.go('login');
   }
-
-  /* var options = { timeout: 10000, enableHighAccuracy: true };
- 
-  $cordovaGeolocation.getCurrentPosition(options).then(function(position){
-    var latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
- 
-    var mapOptions = {
-      center: latLng,
-      zoom: 15,
-      mapTypeId: google.maps.MapTypeId.ROADMAP
-    };
- 
-    $scope.map = new google.maps.Map(document.getElementById("map"), mapOptions);
-
-    google.maps.event.addListenerOnce($scope.map, 'idle', function(){
-      var marker = new google.maps.Marker({
-          map: $scope.map,
-          animation: google.maps.Animation.DROP,
-          position: latLng
-      });
-
-      var infoWindow = new google.maps.InfoWindow({
-          content: "Sua localização atual"
-      });
-     
-      google.maps.event.addListener(marker, 'click', function () {
-          infoWindow.open($scope.map, marker);
-      });
-    });
- 
-  }, function(error){
-    console.log("Não foi possível selecionar localização");
-  }); */
 }])
 
-.controller('ChatsCtrl', function($scope, Chats) {
+.controller('ReviewsController', function($scope, Chats) {
   $scope.chats = Chats.all();
   $scope.remove = function(chat) {
     Chats.remove(chat);
@@ -151,7 +131,11 @@ angular.module('starter.controllers', [])
   $scope.chat = Chats.get($stateParams.chatId);
 })
 
-.controller('AccountCtrl', function($scope) {
+.controller('FaqController', function($scope) {
+
+})
+
+.controller('ProfileController', function($scope) {
   $scope.settings = {
     enableFriends: true
   };

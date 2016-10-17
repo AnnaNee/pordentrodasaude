@@ -69,3 +69,16 @@
 .sign-up {
 	margin-top: 2.8rem; // Top offset for login and sign-up views
 }
+
+.main-tab {
+	.tab-nav.tabs {
+		top: 0;
+		background-color: $tabs-bg-color;
+	}
+}
+
+.tabs-content {
+	ion-content {
+		top: 50px;
+	}
+}

@@ -53,50 +53,58 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
         controller: 'SignUpController'
     })
 
-    // setup an abstract state for the tabs directive
     .state('tab', {
       url: "/tab",
       abstract: true,
       templateUrl: "templates/tabs.html"
     })
 
-    // Each tab has its own nav history stack:
-
-    .state('tab.dash', {
-      url: '/dash',
+    .state('tab.dashboard', {
+      url: '/dashboard',
       views: {
-        'tab-dash': {
-          templateUrl: 'templates/tab-dash.html',
-          controller: 'DashCtrl'
+        'tab-dashboard': {
+          templateUrl: 'templates/tab-dashboard.html',
+          controller: 'DashboardController'
         }
       }
     })
 
-    .state('tab.chats', {
-        url: '/chats',
-        views: {
-          'tab-chats': {
-            templateUrl: 'templates/tab-chats.html',
-            controller: 'ChatsCtrl'
-          }
-        }
-      })
-      .state('tab.chat-detail', {
-        url: '/chats/:chatId',
-        views: {
-          'tab-chats': {
-            templateUrl: 'templates/chat-detail.html',
-            controller: 'ChatDetailCtrl'
-          }
-        }
-      })
-
-    .state('tab.account', {
-      url: '/account',
+    .state('tab.reviews', {
+      url: '/reviews',
       views: {
-        'tab-account': {
-          templateUrl: 'templates/tab-account.html',
-          controller: 'AccountCtrl'
+        'tab-reviews': {
+          templateUrl: 'templates/tab-reviews.html',
+          controller: 'ReviewsController'
+        }
+      }
+    })
+
+    .state('tab.chat-detail', {
+      url: '/reviews/:chatId',
+      views: {
+        'tab-chats': {
+          templateUrl: 'templates/chat-detail.html',
+          controller: 'ChatDetailCtrl'
+        }
+      }
+    })
+
+    .state('tab.faq', {
+      url: '/faq',
+      views: {
+        'tab-faq': {
+          templateUrl: 'templates/tab-faq.html',
+          controller: 'FaqController'
+        }
+      }
+    })
+
+    .state('tab.profile', {
+      url: '/profile',
+      views: {
+        'tab-profile': {
+          templateUrl: 'templates/tab-profile.html',
+          controller: 'ProfileController'
         }
       }
     });
