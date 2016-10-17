@@ -49,6 +49,91 @@ angular.module('starter.services', [])
   };
 })
 
+.factory('Markers', function($http) {
+  var markers = [];
+ 
+  return {
+    getMarkers: function(){
+      return $http.get('http://localhost:8100/model/markers.json').then(function(response) {
+        markers = response;
+        return markers;
+      })
+    },
+
+    getMarker: function(id){
+    }
+  }
+})
+
+.factory('GoogleMaps', function($cordovaGeolocation, Markers){
+  var apiKey = false;
+  var map = null;
+ 
+  function initMap(){
+    var options = {timeout: 10000, enableHighAccuracy: true};
+ 
+    $cordovaGeolocation.getCurrentPosition(options).then(function(position){
+      var latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+ 
+      var mapOptions = {
+        center: latLng,
+        zoom: 9,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+      };
+ 
+      map = new google.maps.Map(document.getElementById("map"), mapOptions);
+ 
+      google.maps.event.addListenerOnce(map, 'idle', function(){
+        loadMarkers();
+      });
+
+    }, function(error){
+      console.log("Não foi possível carregar localização");
+        loadMarkers();
+    });
+ 
+  }
+ 
+  function loadMarkers(){
+      Markers.getMarkers().then(function(markers){
+        console.log("Markers: ", markers);
+ 
+        var records = markers.data;
+ 
+        for (var i = 0; i < records.length; i++) {
+          var record = records[i];
+          var markerPos = new google.maps.LatLng(record.lat, record.lng);
+ 
+          var marker = new google.maps.Marker({
+              map: map,
+              animation: google.maps.Animation.DROP,
+              position: markerPos
+          });
+ 
+          var infoWindowContent = "<h4>" + record.title + "</h4>";          
+ 
+          addInfoWindow(marker, infoWindowContent, record);
+        }
+      }); 
+  }
+ 
+  function addInfoWindow(marker, message, record) {
+      var infoWindow = new google.maps.InfoWindow({
+          content: message
+      });
+ 
+      google.maps.event.addListener(marker, 'click', function () {
+          infoWindow.open(map, marker);
+      });
+  }
+
+  return {
+    init: function(){
+      initMap();
+    }
+  }
+})
+
 .service('LoginService', function($q) {
     return {
         loginUser: function(name, pw) {

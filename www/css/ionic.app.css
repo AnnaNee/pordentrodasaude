@@ -9872,6 +9872,13 @@ a.button {
 .sign-up {
   margin-top: 2.8rem; }
 
+.main-tab .tab-nav.tabs {
+  top: 0;
+  background-color: #27B9B5; }
+
+.tabs-content ion-content {
+  top: 50px; }
+
 .intro-bar {
   background-color: transparent;
   background-image: none; }
@@ -9889,4 +9896,4 @@ a.button {
 
 #map {
   width: 100%;
-  height: 17rem; }
+  height: 100%; }
