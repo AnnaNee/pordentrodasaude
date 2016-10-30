@@ -7,8 +7,6 @@ angular.module('starter.controllers', [])
   if(window.StatusBar) {
     StatusBar.styleDefault();
   }
-
-  GoogleMaps.init("AIzaSyBBs9rsNroypV9krigd5hC6NnEjI9SW1Ig");
 })
 
 .controller('IntroController', ['$scope', '$state', function($scope, $state) {
@@ -58,7 +56,9 @@ angular.module('starter.controllers', [])
     };
 }])
 
-.controller('DashboardController', ['$scope', '$cordovaGeolocation', '$state', 'Markers', function($scope, $cordovaGeolocation, $state, Markers) {
+.controller('DashboardController', ['$scope', '$cordovaGeolocation', '$state', 'Markers', 'GoogleMaps', function($scope, $cordovaGeolocation, $state, Markers, GoogleMaps) {
+  GoogleMaps.init("AIzaSyBBs9rsNroypV9krigd5hC6NnEjI9SW1Ig");
+
   // Autocomplete Google Map fix touch-press on Android devices
   $scope.disableTap = function() {
     var container = document.getElementsByClassName('pac-container');
